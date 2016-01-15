@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+Options +FollowSymLinks -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{DOCUMENT_ROOT}/frontend/$1 -d [NC,OR]
+RewriteCond %{DOCUMENT_ROOT}/frontend/$1 -f [NC]
+RewriteRule ^((?!frontend/).*)$ frontend/$1 [L]

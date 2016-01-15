@@ -1,0 +1,42 @@
+<div class='text-center'>    
+    <pagination items-per-page="perPage" boundary-links="true" rotate="false"  total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" ng-change="pageChanged()"></pagination>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <th><p>id записи</p></th>
+            <th><p>дата по лог-файлу</p></th>
+            <th><p>id процесса</p></th>
+            <th><p>текст ошибки</p></th>
+            <th><p>позиция последнего символа</p></th>
+            <th><p>дата обнаружения ошибки</p></th>
+        </thead>
+        <tbody>
+           <tr ng-repeat="record in records">
+                <td>
+                    {{record.id}}
+                </td>
+                <td>
+                    {{record.date}}
+                </td>
+                <td>
+                    {{record.processid}}
+                </td>
+                <td>
+                    <div clss="well">
+                    {{record.text}}
+                    </div>
+                </td>
+                <td>
+                    {{record.logIndex}}
+                </td>
+                <td>
+                    {{record.createdAt}}
+                </td>
+           </tr>
+        </tbody>
+    </table>
+</div>
+<div class='text-center'>    
+    <pagination items-per-page="perPage" boundary-links="true" rotate="false"  total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" ng-change="pageChanged()"></pagination>
+</div>
