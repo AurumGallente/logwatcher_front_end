@@ -9,9 +9,9 @@ function getData(){
         xhr.open('POST', backendUrl, true);
         xhr.setRequestHeader('content-type', 'application/json');
         xhr.onload = function() {
-              
-              count = Math.abs(lastRecord - JSON.parse(this.responseText).count);
-              lastRecord = JSON.parse(this.responseText).count;
+              lastRecord = (lastRecord==undefined) ? 0 : lastRecord;
+              count = Math.abs(lastRecord - JSON.parse(this.responseText).lastid);
+              lastRecord = JSON.parse(this.responseText).lastid;
               for(var i=0,l=ports.length; i<l; i++) { 
                 ports[i].postMessage(lastRecord);
               }

@@ -13,8 +13,7 @@ $(document).ready(function(){
     worker.port.start();
     worker.port.postMessage({recordid:recordid});
     worker.port.addEventListener("message", function(e) {
-      localStorage.setItem("recordid", e.data);
-      console.log(e.data);
+      localStorage.setItem("recordid", e.data);      
       console.log(JSON.parse(e.data));
     });
 });
