@@ -10,8 +10,8 @@ function getData(){
         xhr.setRequestHeader('content-type', 'application/json');
         xhr.onload = function() {
               
-              count = Math.abs(lastRecord - JSON.parse(this.responseText).lastid);
-              lastRecord = JSON.parse(this.responseText).lastid;
+              count = Math.abs(lastRecord - JSON.parse(this.responseText).count);
+              lastRecord = JSON.parse(this.responseText).count;
               for(var i=0,l=ports.length; i<l; i++) { 
                 ports[i].postMessage(lastRecord);
               }
